@@ -1,8 +1,10 @@
-
 AllCops:
   Exclude:
     - "Guardfile"
     - "Rakefile"
+    - "db/**/*"
+    - "bin/*" 
+    - "config/**/*"
 
   DisplayCopNames: true
 
