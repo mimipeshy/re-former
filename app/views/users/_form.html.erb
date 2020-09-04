@@ -1,29 +1,9 @@
-<%
-=begin%>
-
-<form action='./' method='post' accept-charset="UTF-8">	 
-<input type='hidden' name='authenticity_token' value= "<%= form_authenticity_token %>" />
-<label for='username'>Username:</label>	 %>
-<input type='text' name='user[username]'><br> %>
-<label for='email'>Email:</label> %>
-<input type='email' name='user[email]'><br>	 %>
-<label for='password'>Password:</label>	 %>
-<input type='password' name='user[password]'><br> %>
-<button type='submit'>Submit</button>	
-</form>
-<%= form_tag("./", method: "post") do	 %>
-  <%= label_tag(:username, 'Username: ')	 %>
-  <%= text_field_tag('user[username]')<br> %>
-  <%= label_tag(:email, 'Email: ')	 %>
-  <%= email_field_tag('user[email]')<br> %>
-  <%= label_tag(:password, 'Password')	 %>
-  <%= password_field_tag('user[password]')<br> %>
-  <%= submit_tag('Submit') %>
-<% end %>
-<%
-=end%>
-
 <%= form_for @user do |f| %>
+<ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
   <%= label(:user, :username, 'Username: ') %>
   <%= f.text_field :username %><br>
   <%= label(:user, :email, 'E-mail: ') %>
