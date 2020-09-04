@@ -1,13 +1,6 @@
-<form action="/users" method="post">
-<div>
-<label for="username">username:</label>
-  <input type="text" id="username" name="username"><br><br>
-  <label for="email">email:</label>
-  <input type="text" id="email" name="email"><br><br>
-   <label for="password">password:</label>
-  <input type="password" id="password" name="password"><br><br>
-  <%= form_tag('/users') do -%>
-  <div><%= submit_tag 'Submit' %></div>
-<% end -%>
-</div>
-</form>
+<%= form_for @user do |f| %>
+username: <%= f.text_field :username %><br />
+email:  <%= f.text_field :email %><br />
+password:  <%= f.password_field :password %><br />
+<%= f.submit %>
+<% end %>
