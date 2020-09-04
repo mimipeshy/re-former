@@ -3,8 +3,8 @@
 > This project involved creating a form using the rails form helper methods and  set up validation its fields.
 
 
-![screenshot](app/assets/images/create-user.png)
-![screenshot](app/assets/images/update-user.png)
+![screenshot](./new_user.png)
+![screenshot](./edit_user.png)
 
 
 ## Built With
